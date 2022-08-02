@@ -1,6 +1,6 @@
 package br.com.anderson.api.controllers;
 
-import br.com.anderson.api.domain.User;
+import br.com.anderson.api.domain.Usuario;
 import br.com.anderson.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Integer id){
+    public ResponseEntity<Usuario> findById(@PathVariable Integer id){
         return ResponseEntity.ok().body(userService.findById(id));
     }
 }

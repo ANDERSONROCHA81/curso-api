@@ -1,6 +1,6 @@
 package br.com.anderson.api.services.implementations;
 
-import br.com.anderson.api.domain.User;
+import br.com.anderson.api.domain.Usuario;
 import br.com.anderson.api.repositories.UserRepository;
 import br.com.anderson.api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User findById(Integer id) {
-        Optional<User> obj = userRepository.findById(id);
+    public Usuario findById(Integer id) {
+        Optional<Usuario> obj = userRepository.findById(id);
         return obj.orElse(null);
     }
 }
