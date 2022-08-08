@@ -1,7 +1,8 @@
 package br.com.anderson.api.controllers;
 
-import br.com.anderson.api.domain.Usuario;
+import br.com.anderson.api.domain.dtos.UsuarioDTO;
 import br.com.anderson.api.services.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
+    private ModelMapper modelMapper;
+    @Autowired
     private UserService userService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> findById(@PathVariable Integer id){
-        return ResponseEntity.ok().body(userService.findById(id));
+    public ResponseEntity<UsuarioDTO> findById(@PathVariable Integer id){
+        return ResponseEntity.ok().body(modelMapper.map(userService.findById(id), UsuarioDTO.class));
     }
 }

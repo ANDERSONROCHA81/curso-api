@@ -1,5 +1,6 @@
 package br.com.anderson.api.domain.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ public class UsuarioDTO {
     private Integer id;
     private String name;
     private String email;
+    @JsonIgnore
     private String password;
 
 }
