@@ -1,6 +1,5 @@
 package br.com.anderson.api.controllers;
 
-import br.com.anderson.api.domain.Usuario;
 import br.com.anderson.api.domain.dtos.UsuarioDTO;
 import br.com.anderson.api.services.UserService;
 import org.modelmapper.ModelMapper;
